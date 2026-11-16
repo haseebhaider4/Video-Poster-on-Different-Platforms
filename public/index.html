@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CrossPost</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="logo" aria-hidden="true">▶</span> CrossPost</div>
+    <span class="tagline">Upload once, post everywhere</span>
+  </header>
+
+  <div id="flash" class="flash" role="status" hidden></div>
+
+  <main class="layout">
+    <section class="card">
+      <h2>New post</h2>
+      <form id="postForm" novalidate>
+        <label class="drop" id="drop">
+          <input type="file" id="video" accept="video/*" hidden>
+          <div class="drop-empty" id="dropEmpty">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 16V4m0 0-4 4m4-4 4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            <strong>Drop a video here</strong>
+            <span>or click to choose a file (MP4 or MOV works best)</span>
+          </div>
+          <video id="preview" controls muted playsinline hidden></video>
+        </label>
+        <div class="file-info" id="fileInfo"></div>
+
+        <label class="field">
+          <span class="label">Title <em id="titleCount">0/100</em></span>
+          <input id="title" maxlength="100" placeholder="Leave blank to use the file name">
+        </label>
+
+        <label class="field">
+          <span class="label">Description / caption</span>
+          <textarea id="description" rows="4" placeholder="Used as the YouTube description and the caption on TikTok, Instagram and Facebook"></textarea>
+        </label>
+
+        <label class="field">
+          <span class="label">Hashtags</span>
+          <input id="hashtags" placeholder="travel, vlog, funny">
+        </label>
+
+        <div class="row">
+          <label class="field">
+            <span class="label">YouTube visibility</span>
+            <select id="youtubePrivacy">
+              <option value="public">Public</option>
+              <option value="unlisted">Unlisted</option>
+              <option value="private">Private</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="label">TikTok visibility</span>
+            <select id="tiktokPrivacy">
+              <option value="PUBLIC_TO_EVERYONE">Everyone</option>
+              <option value="FOLLOWER_OF_CREATOR">Followers</option>
+              <option value="MUTUAL_FOLLOW_FRIENDS">Friends</option>
+              <option value="SELF_ONLY">Only me</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="check"><input type="checkbox" id="shorts" checked> Post to YouTube as a Short <span class="muted">(vertical, 3 min or less)</span></label>
+        <label class="check"><input type="checkbox" id="madeForKids"> Made for kids <span class="muted">(YouTube requirement)</span></label>
+
+        <fieldset class="targets">
+          <legend>Post to</legend>
+          <div id="targets"></div>
+        </fieldset>
+
+        <button class="primary" id="submit" type="submit">Post everywhere</button>
+        <div class="bar" id="uploadBar" hidden><div></div><span></span></div>
+      </form>
+    </section>
+
+    <div class="side">
+      <section class="card" id="jobCard" hidden>
+        <h2>Posting</h2>
+        <ul class="results" id="jobResults"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Connected accounts</h2>
+        <div id="platforms"></div>
+      </section>
+
+      <section class="card">
+        <h2>Recent posts</h2>
+        <ul class="history" id="history"></ul>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
