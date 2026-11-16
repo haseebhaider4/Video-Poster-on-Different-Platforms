@@ -8,15 +8,17 @@ It runs on your own computer at http://localhost:3000. Your sign-in tokens stay 
 ## Start it
 
 1. Install [Node.js](https://nodejs.org) 20.16 or newer (you have it already if `node -v` works).
-2. Copy `.env.example` to `.env` and fill in the keys for the platforms you want (steps below).
-3. Double-click **`start.bat`**, or run:
+2. Download this project: click **Code → Download ZIP** on GitHub and unzip it, or run
+   `git clone https://github.com/haseebhaider4/Video-Poster-on-Different-Platforms.git`
+3. Copy `.env.example` to `.env` and fill in the keys for the platforms you want (steps below).
+4. Double-click **`start.bat`**, or run:
    ```bash
    npm install
    ```
    ```bash
    npm start
    ```
-4. Open http://localhost:3000, click **Connect** for each platform, then drop a video and hit **Post everywhere**.
+5. Open http://localhost:3000, click **Connect** for each platform, then drop a video and hit **Post everywhere**.
 
 Restart the app after you change `.env`.
 
